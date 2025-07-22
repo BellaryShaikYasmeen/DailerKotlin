@@ -7,15 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.dailerkotlin.databinding.FragmentKeypadBinding
-import com.example.dialerapp.viewmodel.PhoneViewModel
-
+import com.example.dailerkotlin.viewmodel.PhoneViewModel
 
 class KeypadFragment : Fragment() {
     private var _binding: FragmentKeypadBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: PhoneViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentKeypadBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(requireActivity())[PhoneViewModel::class.java]
         setupUI()
@@ -39,9 +38,14 @@ class KeypadFragment : Fragment() {
             true
         }
 
+        binding.btnDial.setOnClickListener {
+            // TODO: Trigger actual dial intent or display a toast
+        }
+
         viewModel.phoneNumber.observe(viewLifecycleOwner) {
+            if(it.length<=10)
             binding.txtPhone.text = it
-            binding.btnDial.isEnabled = it.isNotEmpty()
+            binding.btnDial.isEnabled = it.length==10
         }
     }
 

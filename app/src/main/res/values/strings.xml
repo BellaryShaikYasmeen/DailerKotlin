@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">DailerKotlin</string>
+    <string name="_1">1</string>
+    <string name="_2_nabc">2\nABC</string>
+    <string name="_3_ndef">3\nDEF</string>
+    <string name="_4_nghi">4\nGHI</string>
+    <string name="_5_njkl">5\nJKL</string>
+    <string name="_6_nmno">6\nMNO</string>
+    <string name="_7_npqrs">7\nPQRS</string>
+    <string name="_8_ntuv">8\nTUV</string>
+    <string name="_9_nwxyz">9\nWXYZ</string>
+    <string name="star">*</string>
+    <string name="_0_n">0\n+</string>
+    <string name="_hash">#</string>
+    <string name="delete">Delete</string>
+    <string name="dial_ncall_from_android">Dial\nCall From Android</string>
 </resources>

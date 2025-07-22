@@ -2,18 +2,23 @@ package com.example.dailerkotlin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.dailerkotlin.KeypadFragment
 import com.example.dailerkotlin.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Use dark theme if not already applied in styles.xml
+        setTheme(R.style.Theme_DailerKotlin_Dark)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Setup Fragmen`ts
         val fragments = listOf(
             KeypadFragment(),
             RecentsFragment(),
@@ -25,8 +30,12 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPagerAdapter(this, fragments)
         binding.viewPager.adapter = adapter
 
+        // Attach TabLayout with ViewPager2
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = titles[position]
         }.attach()
+
+        // Optional: Set tab elevation or padding styling
+        binding.tabLayout.setSelectedTabIndicatorColor(getColor(R.color.teal_200))
     }
 }
