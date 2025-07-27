@@ -19,26 +19,26 @@
 
             <Button
                 android:id="@+id/filterAll"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="All Calls"
-                android:background="@drawable/filter_selected"
-                android:textColor="@android:color/white" />
+                android:background="@drawable/item_background"
+                android:textColor="@android:color/holo_green_dark" />
 
             <Button
                 android:id="@+id/filterIncoming"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="Incoming"
-                android:background="@drawable/filter_button"
+                android:background="@drawable/item_background"
                 android:textColor="@android:color/black" />
 
             <Button
                 android:id="@+id/filterOutgoing"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="Outgoing"
-                android:background="@drawable/filter_button"
+                android:background="@drawable/item_background"
                 android:textColor="@android:color/black" />
 
             <Button
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:text="Missed"
-                android:background="@drawable/filter_button"
+                android:background="@drawable/item_background"
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
