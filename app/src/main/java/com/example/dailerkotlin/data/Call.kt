@@ -9,3 +9,4 @@ data class Call(
     val callType: String, // e.g., "Incoming", "Outgoing", "Missed"
     val timestamp: Long
 )
+enum class CallType { INCOMING, OUTGOING, MISSED }

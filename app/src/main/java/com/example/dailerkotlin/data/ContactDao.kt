@@ -1,21 +1,14 @@
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
-
 @Dao
 interface ContactDao {
 
     @Query("SELECT * FROM contacts")
-    suspend fun getAllContacts(): List<Contact>
+    suspend fun getAllContacts(): List<Contact>  // <-- Already used in your code
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(contact: Contact)
+    @Query("SELECT * FROM contacts")
+    fun getAllContactsFlow(): kotlinx.coroutines.flow.Flow<List<Contact>>  // <-- For real-time updates
 
     @Update
     suspend fun update(contact: Contact)
-
-    @Delete
-    suspend fun delete(contact: Contact)
-
-    @Query("SELECT * FROM contacts WHERE isFavourite = 1")
-    fun getFavouriteContacts(): Flow<List<Contact>>
 }

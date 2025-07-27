@@ -7,7 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dailerkotlin.R
-import com.example.dailerkotlin.RecentCallAdapter
+//import com.example.dailerkotlin.RecentCallAdapter
 import kotlinx.coroutines.launch
 
 class RecentsFragment : Fragment() {
@@ -31,9 +31,9 @@ class RecentsFragment : Fragment() {
         recyclerView.adapter = adapter
 
         lifecycleScope.launch {
-            db.callDao().getRecentCallsFlow().collect { calls ->
-                adapter.updateList(calls)
+//            db.callDao().getRecentCallsFlow().collect { calls ->
+//                adapter.updateList(calls)
             }
         }
     }
-}
+

@@ -3,6 +3,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.app.NotificationCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dailerkotlin.R
 import java.text.SimpleDateFormat
@@ -26,13 +27,14 @@ class RecentCallAdapter(
 
     override fun onBindViewHolder(holder: CallViewHolder, position: Int) {
         val call = calls[position]
-        val iconRes = when (call.type) {
-            CallType.INCOMING -> R.drawable.ic_call_received
-            CallType.OUTGOING -> R.drawable.ic_call_made
-            CallType.MISSED   -> R.drawable.ic_call_missed
+        val iconRes = when (call.callType) {
+            CallType.INCOMING.toString() -> R.drawable.ic_call_received
+            CallType.OUTGOING.toString() -> R.drawable.ic_call_made
+            CallType.MISSED.toString() -> R.drawable.ic_call_missed
+            else -> {}
         }
-        holder.icon.setImageResource(iconRes)
-        holder.number.text = call.number
+//        holder.icon.setImageResource(iconRes)
+        holder.number.text = call.phoneNumber
         holder.details.text = SimpleDateFormat("MMM d, HH:mm", Locale.getDefault())
             .format(Date(call.timestamp))
     }
