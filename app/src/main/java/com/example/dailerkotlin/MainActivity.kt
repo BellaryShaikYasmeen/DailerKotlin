@@ -2,7 +2,6 @@ package com.example.dailerkotlin
 
 import AppDatabase
 import FavoritesFragment
-import RecentsFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dailerkotlin.databinding.ActivityMainBinding
