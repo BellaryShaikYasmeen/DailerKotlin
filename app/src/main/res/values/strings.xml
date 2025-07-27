@@ -14,4 +14,9 @@
     <string name="_hash">#</string>
     <string name="delete">Delete</string>
     <string name="dial_ncall_from_android">Dial\nCall From Android</string>
+    <string name="favorite">favorite</string>
+    <string name="mark_favorite">Fev</string>
+    <string name="contact_avatar" />
+    <string name="favorite_button">Fev</string>
+    <string name="contact_initial">Sir</string>
 </resources>

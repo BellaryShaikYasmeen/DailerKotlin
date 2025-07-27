@@ -1,5 +1,7 @@
 package com.example.dailerkotlin
 
+import AppDatabase
+import FavoritesFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dailerkotlin.databinding.ActivityMainBinding
@@ -8,6 +10,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var db: AppDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +20,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+//load data base:
+        LoadDatabase()
         // Setup Fragmen`ts
         val fragments = listOf(
             KeypadFragment(),
@@ -38,4 +42,9 @@ class MainActivity : AppCompatActivity() {
         // Optional: Set tab elevation or padding styling
         binding.tabLayout.setSelectedTabIndicatorColor(getColor(R.color.teal_200))
     }
+
+    private fun LoadDatabase() {
+        db = AppDatabase.getDatabase(this)
+    }
+
 }

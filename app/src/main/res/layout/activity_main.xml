@@ -7,12 +7,12 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
+        android:layout_width="1500dp"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="@color/teal_200"
-        app:tabTextColor="@color/white"
+        app:tabIndicatorColor="@color/black"
+        app:tabTextColor="@color/gray"
         app:tabSelectedTextColor="@color/teal_200"
-        android:background="@color/light_gray"
+        android:background="@color/black"
         tools:ignore="MissingConstraints" />
 
     <androidx.viewpager2.widget.ViewPager2
