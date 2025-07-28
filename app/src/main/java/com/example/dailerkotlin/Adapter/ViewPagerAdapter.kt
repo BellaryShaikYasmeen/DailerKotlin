@@ -1,4 +1,4 @@
-package com.example.dailerkotlin
+package com.example.dailerkotlin.Adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

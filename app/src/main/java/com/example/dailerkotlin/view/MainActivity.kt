@@ -1,9 +1,10 @@
-package com.example.dailerkotlin
+package com.example.dailerkotlin.view
 
+import com.example.dailerkotlin.Adapter.ViewPagerAdapter
 import AppDatabase
-import FavoritesFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.dailerkotlin.R
 import com.example.dailerkotlin.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
