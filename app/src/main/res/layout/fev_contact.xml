@@ -3,7 +3,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="18dp"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/item_background">
 
     <FrameLayout
         android:layout_width="250dp"

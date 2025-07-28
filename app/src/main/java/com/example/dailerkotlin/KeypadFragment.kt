@@ -1,4 +1,4 @@
-package com.example.dailerkotlin.view
+package com.example.dailerkotlin
 
 import android.os.Bundle
 import android.view.LayoutInflater

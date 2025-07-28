@@ -5,7 +5,8 @@
     android:minHeight="56dp"
     android:orientation="horizontal"
     android:padding="16dp"
-    android:backgroundTint="@color/gray">
+    android:backgroundTint="@color/gray"
+    android:background="@color/gray">
     <TextView
         android:id="@+id/initialCircle"
         android:layout_width="40dp"
@@ -34,6 +35,6 @@
         android:background="?android:selectableItemBackgroundBorderless"
         android:src="@drawable/ic_star_outline"
         android:contentDescription="@string/mark_favorite"
-         />
+        app:tint="@color/design_default_color_on_primary" />
 
 </LinearLayout>

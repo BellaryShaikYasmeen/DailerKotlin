@@ -9,17 +9,16 @@
         android:id="@+id/tabLayout"
         android:layout_width="1500dp"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="#F44336"
-        app:tabTextColor="@color/white"
-        app:tabSelectedTextColor="#F44336"
-        android:background="@color/tab_selected_color"
+        app:tabIndicatorColor="@color/black"
+        app:tabTextColor="@color/gray"
+        app:tabSelectedTextColor="@color/teal_200"
+        android:background="@color/black"
         tools:ignore="MissingConstraints" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/tabLayout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

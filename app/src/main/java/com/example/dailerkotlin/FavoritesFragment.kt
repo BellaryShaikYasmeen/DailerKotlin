@@ -1,6 +1,4 @@
-package com.example.dailerkotlin.view
-import AppDatabase
-import Contact
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +6,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dailerkotlin.Adapter.ContactAdapter
+import com.example.dailerkotlin.ContactAdapter
 import com.example.dailerkotlin.R
 import kotlinx.coroutines.launch
 class FavoritesFragment : Fragment() {
@@ -36,7 +35,7 @@ class FavoritesFragment : Fragment() {
             lifecycleScope.launch {
                 db.contactDao().update(updatedContact)
             }
-        }, R.layout.item_fav_contact)
+        }, R.layout.fev_contact)
 
         recyclerView.adapter = adapter
 
@@ -57,7 +56,7 @@ class FavoritesFragment : Fragment() {
                 db.contactDao().update(updatedContact)
                 refreshFavorites()
             }
-        }, R.layout.item_fav_contact)
+        }, R.layout.fev_contact)
         // Use your favorite layout here
         recyclerView.adapter = adapter
     }
