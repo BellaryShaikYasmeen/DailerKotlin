@@ -6,5 +6,6 @@ data class Contact(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
     val phoneNumber: String,
-    val isFavourite: Boolean = false // 👈 default value
+    var isFavourite: Boolean = false,  // Default value for favourite
+    val photoPath: String? = null      // Optional path to the photo (can be null)
 )

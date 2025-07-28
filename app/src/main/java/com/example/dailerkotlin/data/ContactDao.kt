@@ -14,6 +14,8 @@ interface ContactDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(contact: Contact)
+    @Query("DELETE FROM contacts")
+    fun deleteAll()
 
 
 }

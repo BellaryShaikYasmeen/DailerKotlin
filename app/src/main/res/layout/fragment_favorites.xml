@@ -6,11 +6,13 @@
     android:padding="18dp"
     android:paddingHorizontal="12dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/favoritesRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingBottom="12dp"
-        android:paddingHorizontal="12dp"/>
-</LinearLayout>
+<androidx.recyclerview.widget.RecyclerView
+android:id="@+id/favoritesRecyclerView"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:clipToPadding="false"
+android:paddingBottom="12dp"
+android:paddingHorizontal="12dp"
+    android:fillViewport="true" />
+
+    </LinearLayout>

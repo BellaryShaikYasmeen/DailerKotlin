@@ -15,7 +15,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
-
 class ContactsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
@@ -44,9 +43,10 @@ class ContactsFragment : Fragment() {
 
         searchEditText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
+                val query = s.toString()
                 val filtered = allContacts.filter {
-                    it.name.contains(s.toString(), ignoreCase = true) ||
-                            it.phoneNumber.contains(s.toString(), ignoreCase = true)
+                    it.name.contains(query, ignoreCase = true) ||
+                            it.phoneNumber.contains(query, ignoreCase = true)
                 }
                 adapter.updateList(filtered)
             }
@@ -67,16 +67,9 @@ class ContactsFragment : Fragment() {
 
         lifecycleScope.launch {
             db.contactDao().getAllContactsFlow().collect { contacts ->
-                allContacts = contacts
-                val filtered = contacts.filter {
-                    val query = searchEditText.text.toString()
-                    it.name.contains(query, ignoreCase = true) ||
-                            it.phoneNumber.contains(query, ignoreCase = true)
-                }
-                adapter.updateList(filtered)
+                allContacts = contacts.sortedBy { it.name }
+                adapter.updateList(allContacts) // Display all contacts initially
             }
         }
     }
-
 }
-
