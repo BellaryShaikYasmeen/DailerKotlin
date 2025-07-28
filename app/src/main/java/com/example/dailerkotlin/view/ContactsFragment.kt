@@ -1,11 +1,10 @@
-package com.example.dailerkotlin
+package com.example.dailerkotlin.view
 
 import AppDatabase
 import Contact
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +13,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dailerkotlin.R
+import com.example.dailerkotlin.Adapter.ContactAdapter
 import kotlinx.coroutines.launch
 
 class ContactsFragment : Fragment() {
